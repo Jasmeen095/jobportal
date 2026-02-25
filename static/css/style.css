@@ -1,0 +1,496 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+}
+
+/* Container spacing */
+.container {
+    padding-top: 30px;
+}
+
+/* White content container */
+.container-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: 40px;
+}
+
+
+
+/* Card styling */
+.card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    color: white;
+}
+
+
+.card h4 {
+    color: #00c6ff;
+    text-shadow: 0 0 3px #00c6ff, 0 0 10px #00ff99, 0 0 20px #00ff99;
+}
+
+.card p {
+    color: #dddddd;
+}
+
+/* Glass Cards Hover Animation */
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,255,255,0.3);
+}
+/* Buttons */
+/* Gradient Buttons */
+/* Neon glow on hover */
+.btn-gradient {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gradient::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.btn-gradient:hover::after {
+    left: 125%;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #00c6ff, 0 0 25px #00ff99;
+}
+/* Status badges */
+/* Neon glow on badges */
+.badge {
+    transition: 0.3s ease;
+}
+
+.badge.bg-success:hover {
+    box-shadow: 0 0 8px #00ff99, 0 0 15px #00c6ff;
+}
+
+.badge.bg-warning:hover {
+    box-shadow: 0 0 8px #ffc107, 0 0 15px #ff8c00;
+}
+
+.badge.bg-danger:hover {
+    box-shadow: 0 0 8px #ff4d4d, 0 0 15px #ff1a1a;
+}
+
+/* Navbar */
+.custom-navbar {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 22px;
+    color: white !important;
+}
+
+.nav-link-custom {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link-custom:hover {
+    color: #ffd369;
+}
+
+.hero-section {
+    color: white;
+    padding: 60px 20px;
+}
+
+.hero-section h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    background: #00c6ff;
+    border: none;
+}
+
+.btn-success {
+    background: #00ff99;
+    border: none;
+}
+
+.btn-danger {
+    background: #ff4b5c;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: #00c6ff;
+    filter: blur(250px);
+    top: -200px;
+    right: -200px;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+h2,h3,h5{
+    background: linear-gradient(90deg, #00c6ff, #00ff99);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+/* Full screen center container */
+.success-container {
+    height: 80vh;
+}
+
+/* Glass card */
+.success-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0,255,255,0.2);
+    backdrop-filter: blur(15px);
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.success-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,255,255,0.4);
+}
+
+/* Neon effect for match score */
+.match-score {
+    color: #00ff99;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #00c6ff, 0 0 10px #00ff99, 0 0 20px #00ff99;
+}
+
+/* Gradient button (reuse existing) */
+.btn-gradient {
+    background: linear-gradient(90deg, #00c6ff, #00ff99);
+    border: none;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,255,255,0.4);
+}
+
+/* Dashboard container */
+.dashboard-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Glass cards */
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 20px rgba(0,255,255,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,255,255,0.4);
+}
+
+/* Messages container */
+.messages-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Alert boxes */
+.alert {
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0,255,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Success message */
+.alert-success {
+    background: rgba(0, 255, 99, 0.1);
+    border: 1px solid #00ff99;
+    color: #00ff99;
+}
+
+/* Warning message */
+.alert-warning {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid #ffc107;
+    color: #ffc107;
+}
+
+/* Error message */
+.alert-error {
+    background: rgba(255, 77, 77, 0.1);
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* Hover glow effect */
+.alert:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0,255,255,0.4);
+}
+
+.alert {
+    transition: opacity 1s, transform 1s;
+}
+
+/* ===== POST JOB PAGE ===== */
+
+.post-job-container {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.post-job-card {
+    background: #1c1c1c;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    color: white;
+}
+
+.post-job-card input,
+.post-job-card textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background: #2c2c2c;
+    color: white;
+}
+
+.post-job-card input:focus,
+.post-job-card textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.btn-post {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.btn-post:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00c6ff;
+}
+.post-card {
+    background-color: #1e1e2f;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    color: white;
+}
+
+.post-card input,
+.post-card textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 5px;
+    background-color: #2c2c3e;
+    color: white;
+}
+
+.post-card input:focus,
+.post-card textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #00c6ff;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-buttons form {
+    margin: 0;
+}
+
+.action-btn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    width: auto; /* VERY IMPORTANT */
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+@media (max-width: 576px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .post-card {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .btn-post {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .dashboard-card { padding: 15px; }
+    .text-gradient { font-size: 1.2rem; }
+}
+/* Mobile adjustments */
+@media (max-width: 576px) {
+    .success-card { padding: 25px; }
+    .success-card h2 { font-size: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2rem; }
+    .hero-section p { font-size: 1.2rem; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+    .login-card {
+        padding: 20px;
+    }
+
+    .login-card h2 {
+        font-size: 1.8rem;
+    }
+}
+.btn-gradient {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* Full screen center container */
+.login-container {
+    height: 80vh;
+}
+
+/* Glass card for login */
+.login-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,255,255,0.2);
+    backdrop-filter: blur(15px);
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,255,255,0.4);
+}
+
+/* Gradient login button (already defined) */
+.btn-gradient {
+    background: linear-gradient(90deg, #00c6ff, #00ff99);
+    border: none;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,255,255,0.4);
+}
+
+/* Links gradient effect */
+.text-gradient {
+    background: linear-gradient(90deg, #00c6ff, #00ff99);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.text-gradient:hover {
+    opacity: 0.8;
+}

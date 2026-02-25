@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Apply for {{ job.title }}</h2>
+<form method="POST"   enctype="multipart/form-data">
+    {%csrf_token%}
+    <input type="file" name="resume" required class="form-control mb-3">
+    <button type="submit" class="btn btn-gradient py-2 px-4 w-md-auto w-100">Submit</button>
+</form>
+</body>
+</html>
+{% endblock content %}

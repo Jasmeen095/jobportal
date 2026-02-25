@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-12">
+            <div class="post-card p-4">
+
+                <h2 class="text-center mb-4">Post a New Job</h2>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        {{ form.title.label_tag }}
+                        {{ form.title }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.description.label_tag }}
+                        {{ form.description }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.skill_required.label_tag }}
+                        {{ form.skill_required }}
+                    </div>
+
+                    <button type="submit" class="btn-post mt-3 w-md-auto w-100">
+                        Post Job 🚀
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

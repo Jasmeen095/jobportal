@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-container-fluid px-3 px-md-5 py-5">
+    <h2 class="text-white mb-4">My Applications</h2>
+
+    {% for app in applications %}
+    <div class="card dashboard-card mb-3">
+        <div class="card-body">
+            <h5 class="text-gradient">{{ app.job.title }}</h5>
+            <p><strong>Match Score:</strong> <span class="match-score">{{ app.match_score }}%</span></p>
+            <p><strong>Status:</strong>
+                {% if app.status == 'Pending' %}
+                    <span class="badge bg-warning">Pending</span>
+                {% elif app.status == 'Shortlisted' %}
+                    <span class="badge bg-success">Shortlisted</span>
+                {% else %}
+                    <span class="badge bg-danger">Rejected</span>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-white">You haven't applied to any jobs yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

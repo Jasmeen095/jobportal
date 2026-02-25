@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="success-container d-flex justify-content-center align-items-center">
+    <div class="success-card text-center p-4">
+    <h2 class="mb-3">Application Submitted Successfully!</h2>
+    <p class="lead mb-3">
+            Your match score for <strong>{{ application.job.title }}</strong> is 
+            <span class="match-score">{{ score }}%</span>
+        </p>
+    <p><strong>Status:</strong>
+        {% if application.status == 'Pending' %}
+            <span class="badge bg-warning">Pending</span>
+        {% elif application.status == 'Shortlisted' %}
+            <span class="badge bg-success">Shortlisted</span>
+        {% elif application.status == 'Rejected' %}
+            <span class="badge bg-danger">Rejected</span>
+        {% endif %}
+    </p>
+    <a href="{% url 'home' %}" class="btn btn-gradient mt-3">Back to Jobs</a>
+    </div>
+</div>
+    
+{% endblock content %}

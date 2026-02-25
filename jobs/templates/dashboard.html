@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-container row g-3 py-4">
+
+    <h2 class="text-white mb-4">Your Posted Jobs</h2>
+    {% for job in jobs %}
+    <div class="col-12 col-md-6 col-lg-4"></div>
+    <div class="card dashboard-card mb-3">
+        <div class="card-body">
+            <h4 class="text-gradient">{{ job.title }}</h4>
+            <p>{{ job.description }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+    <hr class="border-light">
+
+    <h2 class="text-white mb-4">Applications Received</h2>
+    {% for app in applications %}
+    <div class="card dashboard-card mb-3">
+        <div class="card-body">
+            <h5 class="text-white">{{ app.applicant.username }}</h5>
+            <p><strong>Job:</strong> {{ app.job.title }}</p>
+            <p><strong>Match Score:</strong> {{ app.match_score }}%</p>
+            <p><strong>Status:</strong>
+                <span
+                    class="badge {% if app.status == 'Pending' %}bg-warning{% elif app.status == 'Shortlisted' %}bg-success{% else %}bg-danger{% endif %}">
+                    {{ app.status|title }}
+                </span>
+            </p>
+
+            <a href="{{ app.resume.url }}" class="btn btn-gradient btn-sm" target="_blank">Download Resume</a>
+
+            <form method="POST" action="{% url 'update_status' app.id %}" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="status" value="Shortlisted">
+                <button type="submit" class="btn btn-success action-btn">Shortlist</button>
+            </form>
+
+            <form method="POST" action="{% url 'update_status' app.id %}" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="status" value="Rejected">
+                <button type="submit" class="btn btn-danger action-btn  ">Reject</button>
+            </form>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-white">No applications yet.</p>
+    {% endfor %}
+
+</div>
+{% endblock %}
