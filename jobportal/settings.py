@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [ 
     "jobportal-5gha.onrender.com",
+    "jobportal-1-gbqc.onrender.com",
     "localhost",
     "127.0.0.1",]
 
